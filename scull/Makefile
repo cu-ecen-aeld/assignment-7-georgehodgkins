@@ -1,6 +1,7 @@
 # Comment/uncomment the following line to disable/enable debugging
 #DEBUG = y
 
+lksdnfadsnf'sdaklfnsdn
 
 # Add your debugging flag (or not) to CFLAGS
 ifeq ($(DEBUG),y)
@@ -17,9 +18,9 @@ EXTRA_CFLAGS += -I$(LDDINC)
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
 
-scull-y := badfile.o main.o pipe.o access.o
-
 obj-m	:= scull.o
+scull-y := main.o pipe.o access.o
+
 
 else
 
