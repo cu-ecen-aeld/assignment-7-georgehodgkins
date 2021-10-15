@@ -23,11 +23,10 @@ obj-m	:= scull.o
 
 else
 
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build
 PWD       := $(shell pwd)
 
 modules:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+	$(MAKE) -C $(LINUX_DIR) M=$(PWD) modules
 
 endif
 
