@@ -16,7 +16,8 @@ EXTRA_CFLAGS += -I$(LDDINC)
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
-include Kbuild
+scull-objs := main.o pipe.o access.o
+obj-m	:= scull.o
 else
 
 PWD       := $(shell pwd)
