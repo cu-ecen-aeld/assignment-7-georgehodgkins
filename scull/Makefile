@@ -1,7 +1,6 @@
 # Comment/uncomment the following line to disable/enable debugging
 #DEBUG = y
 
-lksdnfadsnf'sdaklfnsdn
 
 # Add your debugging flag (or not) to CFLAGS
 ifeq ($(DEBUG),y)
@@ -17,20 +16,16 @@ EXTRA_CFLAGS += -I$(LDDINC)
 
 ifneq ($(KERNELRELEASE),)
 # call from kernel build system
-
-obj-m	:= scull.o
-scull-y := main.o pipe.o access.o
-
-
+include Kbuild
 else
 
 PWD       := $(shell pwd)
+LINUX_DIR ?= /lib/modules/$(shell uname -r)/build
 
 modules:
 	$(MAKE) -C $(LINUX_DIR) M=$(PWD) modules
 
 endif
-
 
 
 clean:

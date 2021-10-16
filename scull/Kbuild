@@ -1,0 +1,4 @@
+
+obj-m	:= scull.o
+scull-y := main.o pipe.o access.o
+
